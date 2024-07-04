@@ -3,7 +3,12 @@ import { useTodo } from '../context/TodoContext';
 
 function TodoForm() {
     const [todo, setTodo] = useState("")
+    
     const {addTodo} = useTodo()
+    /*
+    useTodo: Custom hook that provides access to the context values.
+    addTodo: Function from the context used to add a new todo item. It is destructured from the context returned by useTodo.
+    */
 
     const add = (e) => {
       e.preventDefault()
@@ -11,7 +16,7 @@ function TodoForm() {
       if (!todo) return
 
       addTodo({ todo, completed: false})
-      setTodo("")
+      setTodo("")//setTodo(""): Clears the input field after the todo is added.
     }
 
   return (
@@ -22,6 +27,10 @@ function TodoForm() {
               className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
               value={todo}
               onChange={(e) => setTodo(e.target.value)}
+              /*
+                value={todo}: Binds the input value to the todo state.
+                onChange={(e) => setTodo(e.target.value)}: Updates the todo state whenever the input value changes.
+                */
           />
           <button type="submit" className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0">
               Add

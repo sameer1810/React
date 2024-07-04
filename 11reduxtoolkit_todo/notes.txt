@@ -1,0 +1,23 @@
+Redux is diff library.
+React redux is diff library.
+Redux-Toolkit is diff library.
+
+CONCEPTS in Redux-Toolkit:-
+    Store
+    Reducers
+    useDispatch
+    useSelector
+
+
+step 1=> process of creating Store
+
+1. configure store.
+2. export this store
+
+step 2 => create Slice & reducers
+
+step 3 => export individual functinality
+        export all reducer
+
+
+
